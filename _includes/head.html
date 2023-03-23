@@ -73,6 +73,7 @@
   {%- endif -%}
   {%- if site.local_search -%}
   <script defer src="/assets/js/search.js"></script>
+  <script src="/assets/js/tabs.js"></script>
   {%- endif -%}
   {%- include analytics/feedback.html -%}
 
@@ -93,6 +94,7 @@
   <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/style.css" id="pagestyle">
+  <link rel="stylesheet" href="/assets/css/tabs.css">
 
   <!-- SEO stuff -->
   <meta name="twitter:title" itemprop="title name" content="{{ page.title | default: page_title }}"/>

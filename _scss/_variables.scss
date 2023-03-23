@@ -5,11 +5,14 @@
 /*
  * global
  */
-$headings:              "Roboto", sans-serif;
-$headings-landing:      "Roboto", sans-serif;
-$buttons:               "Roboto", sans-serif;
-$font:                  "Roboto", sans-serif;
-$body-text-size:        14px;
+$headings:              "Helvetica Neue",Helvetica,Arial,sans-serif;
+$headings-landing:      "Helvetica Neue",Helvetica,Arial,sans-serif;
+$buttons:               "Helvetica Neue",Helvetica,Arial,sans-serif;
+$font:                  "Helvetica Neue",Helvetica,Arial,sans-serif;
+$body-text-size:        16px;
+$h1:                    48px;
+$h2:                    32px;
+$h3:                    24px;
 $white:                 #fff;
 $black:                 #000;
 $top-navigation-height: 92px; // top navigation height is: nav (55px) + breadcrumbs (37px)
@@ -17,13 +20,13 @@ $top-navigation-height: 92px; // top navigation height is: nav (55px) + breadcru
 /*
  * standard mode
  */
-$body-text:             $black;
+$body-text:             $teBlack;
 $primary-links:         $light-blue-600;
 //
 $bg-body:               $white;
 $bg-body-landing:       $light-page-background;
-$bg-header:             $light-blue-500;
-$bg-secondary:          $light-blue-500;
+$bg-header:             $teBlack;
+$bg-secondary:          $teBlack;
 $bg-sidebar:            $light-page-background;
 $bg-sidebar-active:     $light-page-background;
 $bg-footer:             $white;
@@ -48,7 +51,7 @@ $primary-links-night:    $dark-grey-700;
 
 $bg-body-night:          $dark-palette-background;
 $bg-body-landing-night:  $dark-palette-background;
-$bg-header-night:        $dark-blue-200;
+$bg-header-night:        $teBlack;
 $bg-secondary-night:     $dark-grey-100;
 $bg-sidebar-night:       $dark-grey-100;
 $bg-sidebar-night-active: $dark-grey-100;

@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem 'jekyll-redirect-from'
   gem 'jekyll-relative-links'
   gem 'jekyll-sitemap'
+  gem "jekyll-tabs"
 end
 
 # FIXME: This is a workaround for a bug in rouge console lexer

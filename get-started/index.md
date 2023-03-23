@@ -1,7 +1,7 @@
 ---
-title: "Overview"
-keywords: docker basics, how to start a docker container, container settings, setup docker, how to setup docker, setting up docker, docker container guide, how to get started with docker
-description: Get started with the Docker basics in this comprehensive overview, You'll learn about containers, images, and how to containerize your first application.
+title: "Get started"
+description: The Trading Economics Application Programming Interface (API) presentation
+keywords: start using, authentication, packages, data types, status code, rate limits
 redirect_from:
 - /engine/getstarted-voting-app/
 - /engine/getstarted-voting-app/cleanup/
@@ -57,42 +57,119 @@ redirect_from:
 - /windows/step_two/
 ---
 
-Welcome! We're excited that you want to learn Docker.
+The basics steps to start using Trading Economics API. There is two ways of using the API: endpoints or packages. Endpoint is a URL wich, with the right parameters, returns a specific data. Trading Economics API uses differents endpoints to provide several data. Users can also download Trading Economics API packages to easily integrate it to its projects. The packages are available for Python and Node.js.
 
-This guide contains step-by-step instructions on how to get started with Docker. Some of the things you'll learn and do in this guide are:
+## The Documentation
 
-- Build and run an image as a container.
-- Share images using Docker Hub.
-- Deploy Docker applications using multiple containers with a database.
-- Run applications using Docker Compose.
+Trading Economics API Documentation provides a sample of data for a specific topic, using endpoints and code line from the packages.
+Each section (menu on the left) has its related endpoints and code to make it easier to find. Some sections also has a Response Fields table.<br>
+The endpoint shows how parameters are passed. Clicking in the endpoint will redirect to a sample of the data.
+The code line is displayed on the selected language and is ready to use. Simply copy and paste it in your project.
 
-Before you get to the hands on part of the guide, you should learn about containers and images.
+## Authentication
 
-## What is a container?
+The API provides different methods of authorization. Each request made against API must be supplied with authentication credentials.
 
-Simply put, a container is a sandboxed process on your machine that is isolated from all other processes on the host machine. That isolation leverages [kernel namespaces and cgroups](https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504),
-features that have been in Linux for a long time. Docker has worked to make these capabilities approachable and easy to use. To summarize, a container:
+Note: without an API key all requests will return the default sample data.
 
-- Is a runnable instance of an image. You can create, start, stop, move, or delete a container using the DockerAPI or CLI.
-- Can be run on local machines, virtual machines or deployed to the cloud.
-- Is portable (can be run on any OS).
-- Is isolated from other containers and runs its own software, binaries, and configurations.
+### Endpoint
 
-## What is a container image?
+Authorization parameters must be provided in the URL query or in the Request Reader.
 
-When running a container, it uses an isolated filesystem. This custom filesystem is provided by a container image. Since the image contains the container's filesystem, it must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. The image also contains other configuration for the container, such as environment variables, a default command to run, and other metadata.
+```curl -i "https://api.tradingeconomics.com/country/mexico/?client=guest:guest"```
 
-You'll dive deeper into images later on in this guide, covering topics such as layering, best practices, and more.
+Using Headers auth:
 
-> **Note**
->
-> If you're familiar with `chroot`, think of a container as an extended version of `chroot`. The filesystem is simply coming from the image. But, a container adds additional isolation not available when simply using chroot.
+```curl -i "https://api.tradingeconomics.com/country/mexico/" -H "Authorization: Client guest:guest"```
 
-## Next steps
+### Packages 
 
-In this section, you learned about containers and images.
+{% tabs log %}
 
-In the next section, you'll containerize your first application.
+{% tab log python %}
+You can get Python from: <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads <i class='fa-solid fa-up-right-from-square'></i></a>.
+Then you need to install the <b>tradingeconomics package</b>.<br>
+Install the tradingeconomics package using pip, a package management system used to install and manage software packages written in Python. In Windows Command Prompt or Linux bash type:
 
-[Containerize an application](02_our_app.md){: .button  .primary-btn}
+```python
+pip3 install tradingeconomics
+```
+
+To start using the Trading Economics Python package, open the python command line, and type:
+
+```python
+import tradingeconomics as te
+te.login('Your_Key:Your_Secret')
+```
+
+If you don’t have an APIkey and just want to try a demo of our API:
+
+```python
+te.login()
+```
+
+{% endtab %}
+
+{% tab log node %}
+You can get Node.js from: <a href="https://nodejs.org/en/download/" target="_blank">nodejs.org/en/download <i class='fa-solid fa-up-right-from-square'></i></a>.
+Then you need to install the <b>tradingeconomics package</b>.<br>
+In Windows Command Prompt or Linux bash type:
+
+```javascript
+npm install tradingeconomics
+```
+
+To start using the Trading Economics Node package:
+
+```javascript
+const te = require('tradingeconomics');
+te.login('client_key');
+```
+
+If you don’t have an APIkey and just want to try a demo of our API:
+
+```javascript
+te.login()
+```
+{% endtab %}
+
+{% endtabs %}
+
+You can get a test key at [User dashboard](http://developer.tradingeconomics.com).
+
+## GitHub
+
+You can look for other examples on how to use our API in different programming languages, in our [Github](https://github.com/tradingeconomics/tradingeconomics) repository.
+
+## Data Types
+
+You can request data in several formats:
+
+- json
+
+    https://api.tradingeconomics.com/historical/country/mexico/indicator/gdp?c=guest:guest&f=json
+
+- xml
+
+    https://api.tradingeconomics.com/historical/country/mexico/indicator/gdp?c=guest:guest&f=xml
+
+- csv
+
+    https://api.tradingeconomics.com/historical/country/mexico/indicator/gdp?c=guest:guest&f=csv
+
+## Status codes
+
+- 200 - OK
+- 401 - Unauthorized (The user doesn’t have an access, client key missing or wrong)
+- 403 - Forbidden (The user hit the maximum limit of downloads or was blocked)
+- 400 - Bad Request (Some error with a request, like a typo, wrong parameter, etc.)
+- 409 - Conflict (Throttle, to many requests per second, beyond the API limit - 1 request per second)
+
+## Rate Limits
+
+- API calls for historical data have a maximum limitation of 10000 rows.
+- PI calls for the Economic Calendar have a maximum limitation of 2500 rows.
+- One API call is limited to 260 characters.
+- There is a general limitation of 1 request per second.
+
 

@@ -9,7 +9,7 @@ repo: https://github.com/docker/docs
 
 markdown: kramdown
 highlighter: rouge
-incremental: true
+incremental: false
 permalink: pretty
 safe: false
 lsi: false
@@ -81,6 +81,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-relative-links
   - jekyll-sitemap
+  - jekyll-tabs
 
 # Assets
 #
