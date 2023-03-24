@@ -8,7 +8,7 @@ The API also provides historical of stocks earnings and fundamental information.
 
 ## By symbol
 
-Get financials historical data filtering by symbol
+Get financials historical data by symbol
 
 [/financials/historical/{symbol:category}](https://api.tradingeconomics.com/financials/historical/aapl:us:assets?c=guest:guest&f=json)
 
@@ -32,7 +32,7 @@ data = te.getFinancialsHistorical(symbol = 'aapl:us', category = 'assets' ).then
 
 ## By multiple symbols
 
-Get financials historical data filtering by symbol
+Get financials historical data by symbol
 
 [/financials/historical/{symbol:category,symbol:category}](https://api.tradingeconomics.com/financials/historical/aapl:us:assets,msft:us:assets?c=guest:guest&f=json)
 
@@ -56,7 +56,7 @@ data = te.getFinancialsHistorical(symbol = ['aapl:us', 'msft:us'], category = 'a
 
 ## By symbol and date
 
-Get financials historical data filtering by symbol and a date interval
+Get financials historical data by symbol and a date interval
 
 [/financials/historical/{symbol:category}?d1=yyyy-mm-dd&d2=yyyy-mm-dd](https://api.tradingeconomics.com/financials/historical/aapl:us:assets?f=json&d1=2022-01-01&d2=2023-01-01)
 

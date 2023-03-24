@@ -32,7 +32,7 @@ data = te.getEarnings().then(function(data){
 
 ## By date
 
-Get earnings revenues calendar filtering by date
+Get earnings revenues calendar by date
 
 [/earnings-revenues?d1=yyyy-mm-dd](https://api.tradingeconomics.com/earnings-revenues?c=guest:guest&d1=2017-01-01&f=json)
 
@@ -74,7 +74,7 @@ CHECKING
 
 ## By symbol and date
 
-Get earnings revenues calendar filtering by instrument symbol and date
+Get earnings revenues calendar by instrument symbol and date
 
 [/earnings-revenues/symbol/{symbol}?d1=yyyy-mm-dd](https://api.tradingeconomics.com/earnings-revenues/symbol/aapl:us?c=guest:guest&d1=2017-01-01&f=json)
 
@@ -118,7 +118,7 @@ data = te.getEarnings(symbol = 'CMCSA:US', start_date = '2018-02-02', end_date =
 
 ## By country
 
-Get earnings revenues calendar filtering by country
+Get earnings revenues calendar by country
 
 [/earnings-revenues/country/{country}](https://api.tradingeconomics.com/earnings-revenues/country/mexico?c=guest:guest&f=json)
 

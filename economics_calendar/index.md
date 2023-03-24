@@ -32,7 +32,7 @@ data = te.getCalendar().then(function (data) {
 
 ## By importance
 
-List all calendar events filtering by importance (1-Low, 2-Medium, 3-High)
+List all calendar events by importance (1-Low, 2-Medium, 3-High)
 
 [/calendar?importance=2](https://api.tradingeconomics.com/calendar?c=guest:guest&importance=2&f=json)
 
@@ -56,7 +56,7 @@ data = te.getCalendar(importance = '1').then(function(data){
 
 ## By date
 
-List all calendar events filtering by date
+List all calendar events by date
 
 [/calendar/country/All/{yyyy-mm-dd}/{yyyy-mm-dd}](https://api.tradingeconomics.com/calendar/country/All/2016-12-02/2016-12-03?c=guest:guest&f=json)
 
@@ -100,7 +100,7 @@ data = te.getCalendar(start_date = '2016-02-01', end_date = '2016-02-10',importa
 
 ## By country
 
-List all calendar events filtering by country
+List all calendar events by country
 
 [/calendar/country/{country}](https://api.tradingeconomics.com/calendar/country/united%20states?c=guest:guest&f=json)
 
@@ -164,7 +164,7 @@ data = te.getCalendar(country = ['united states','united kingdom'], start_date =
 
 ## By indicator
 
-List all calendar events filtering by indicator
+List all calendar events by indicator
 
 [/calendar/indicator/{indicators}](https://api.tradingeconomics.com/calendar/indicator/inflation%20rate?c=guest:guest&f=json)
 
@@ -208,7 +208,7 @@ data = te.getCalendar(indicator = 'inflation rate', country = ['united states','
 
 ## By group.
 
-List all calendar events filtering by group (interest rate, inflation, bonds, consumer, gdp, government, housing, labour, markets, money, prices, trade, business)
+List all calendar events by group (interest rate, inflation, bonds, consumer, gdp, government, housing, labour, markets, money, prices, trade, business)
 
 [/calendar/group/{group}](https://api.tradingeconomics.com/calendar/group/bonds?c=guest:guest&f=json)
 
@@ -252,7 +252,7 @@ data = te.getCalendarEventsByGroup(group = 'inflation', country = 'china', start
 
 ## By ID
 
-List all calendar events filtering by calendar ID 
+List all calendar events by calendar ID 
 
 [/calendar/calendarid/{calendarids}](https://api.tradingeconomics.com/calendar/calendarid/174108,160025,160030?c=guest:guest&f=json)
 
@@ -284,7 +284,7 @@ data = te.getCalendar(id = ['174108','160025','160030']).then(function(data){
 
 ## By ticker
 
-List all calendar events filtering by calendar ticker 
+List all calendar events by calendar ticker 
 
 [/calendar/ticker/{ticker}](https://api.tradingeconomics.com/calendar/ticker/IJCUSA,SPAINFACORD,BAHRAININFNRATE?c=guest:guest&f=json)
 

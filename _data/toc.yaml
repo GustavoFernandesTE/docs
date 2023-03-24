@@ -62,6 +62,18 @@ guides:
   - path: /financials/earnings_revenues/
     title: Earnings Revenues
 
+- sectiontitle: Forecasts
+  section:
+  - path: /forecasts/
+    title: Indicators
+  - path: /forecasts/markets/
+    title: Markets
+
+- sectiontitle: News
+  section:
+  - path: /news/
+    title: Get news
+
 reference:
 - path: /reference/
   title: Reference documentation

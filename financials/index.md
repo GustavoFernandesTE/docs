@@ -32,7 +32,7 @@ data = te.getFinancialsData().then(function(data){
 
 ## By country
 
-List all financials data filtering by country (maximum of 5)
+List all financials data by country (maximum of 5)
 
 [/financials/companies?country={country}](https://api.tradingeconomics.com/financials/companies?country=united%20states&c=guest:guest&f=json)
 
@@ -98,7 +98,7 @@ CHECKING
 
 ## By categories
 
-List all financials data filtering by category
+List all financials data by category
 
 [/financials/category/{category}](https://api.tradingeconomics.com/financials/category/assets?c=guest:guest&f=json)
 
@@ -120,7 +120,7 @@ CHECKING
 
 ## By symbol
 
-List all financials data filtering by stock symbol
+List all financials data by stock symbol
 
 [/financials/symbol/{symbol}](https://api.tradingeconomics.com/financials/symbol/aapl:us?c=guest:guest&f=json)
 
